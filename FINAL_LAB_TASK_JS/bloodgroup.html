@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+	<title>Blood Group</title>
+<script type='text/javascript'>
+function formValidation()
+{
+
+var ublood = document.form1.blood1;
+
+
+
+              if(countryselect(ublood))
+                {
+                  
+                         
+window.location="bloodgroup.html";
+}
+
+
+
+return false;
+}
+
+
+
+function countryselect(ublood)
+       {
+	if(ublood.value == "BG_1")
+                 {
+		alert('Select your blood group from the list');
+		ublood.focus();
+		return false;
+	}
+        else
+        {
+		return true;
+	}
+}
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<form name='form1' onsubmit='return formValidation()' >
+			Blood Group
+			<select name="blood1">
+				<option value="BG_1"></option>
+				<option value="BG">A-</option>
+				<option value="BG">A-</option>
+				<option value="BG">B+</option>
+				<option value="BG">B-</option>
+				<option value="BG">AB+</option>
+				<option value="BG">AB-</option>
+				<option value="BG">O+</option>
+				<option value="BG">O-</option>
+				
+			</select><br>
+			__________________<br><br>
+		<input type="submit" name="" value="Submit">
+	</form>
+</body>
+</html>

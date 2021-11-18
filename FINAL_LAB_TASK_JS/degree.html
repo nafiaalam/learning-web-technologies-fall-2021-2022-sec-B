@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Degree</title>
+	<script type='text/javascript'>
+function formValidation()
+{
+
+var ussc = document.form1.ssc;
+var uhsc = document.form1.hsc;
+var ubsc = document.form1.bsc;
+                          if(validsex(ussc,uhsc,ubsc))
+                         {
+window.location="degree.html";
+}
+
+
+
+return false;
+}
+
+
+
+function validsex(ussc,uhsc,ubsc)
+{
+ x=0;
+       
+	if(ussc.checked) 
+        {
+	x++;
+	}
+
+        if(uhsc.checked)
+        {
+        x++; 
+	}
+	   if(ubsc.checked)
+        {
+        x++; 
+	}
+     if(x==0)
+       {
+	alert('Select SSC/HSC/Bsc');
+		ussc.focus();
+		return false;
+        }
+        else
+        {
+	return true;
+		
+	}
+
+}
+</script>
+</head>
+<body>
+<form name='form1' onsubmit='return formValidation()' >
+		<fieldset style="width:200px">
+			<legend>Degree</legend>
+			<input type="checkbox" name="ssc" value=""> SSC 
+			<input type="checkbox" name="hsc" value=""> HSC 
+			<input type="checkbox" name="bsc" value=""> BSc <br>
+		</fieldset><br>
+		<input type="submit" name="" value="Submit">
+	</form>
+</body>
+</html>

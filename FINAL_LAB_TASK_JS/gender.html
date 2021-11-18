@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Gender</title>
+	<script type='text/javascript'>
+function formValidation()
+{
+
+var umsex = document.form1.msex;
+var ufsex = document.form1.fsex;
+var uosex = document.form1.osex;
+                          if(validsex(umsex,ufsex,uosex))
+                         {
+window.location="gender.html";
+}
+
+
+
+return false;
+}
+
+
+
+function validsex(umsex,ufsex,uosex)
+{
+ x=0;
+       
+	if(umsex.checked) 
+        {
+	x++;
+	}
+
+        if(ufsex.checked)
+        {
+        x++; 
+	}
+	   if(uosex.checked)
+        {
+        x++; 
+	}
+     if(x==0)
+       {
+	alert('Select Male/Female/Other');
+		umsex.focus();
+		return false;
+        }
+        else
+        {
+	return true;
+		
+	}
+
+}
+</script>
+</head>
+<body>
+<form name='form1' onsubmit='return formValidation()' >
+		<fieldset style="width:200px">
+			<legend>Gender</legend> 
+			<input type="radio" name="msex" value=""> Male
+			<input type="radio" name="fsex" value=""> Female
+			<input type="radio" name="osex" value=""> Other <br>
+		</fieldset><br>
+		<input type="submit" name="" value="Submit">
+	</form>
+</body>
+</html>

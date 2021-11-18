@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+	<title>Picture</title>
+
+	<script type='text/javascript'>
+function formValidation()
+{
+var uid = document.form1.userid;
+
+
+	if(userid_validation(uid))
+          {
+             
+window.location="propic.html";
+}
+
+
+      
+
+return false;
+}
+
+
+
+function userid_validation(uid)
+ { 
+      var numbers = /^[0-9]+$/;
+       if(uid.value.match(numbers))
+          {
+            return true;
+           }
+       else
+            {
+             alert('Please input numeric characters only');
+             uzip.focus();
+             return false;
+             }
+   }
+
+
+document.getElementById("file").addEventListener("change", validateFile);
+
+function validateFile(){
+  const allowedExtensions =  ['jpg','jpeg','png'],
+        sizeLimit = 1000000; // 1 megabyte
+  
+  
+  const { name:fileName, size:fileSize } = this.files[0];
+  
+  
+  const fileExtension = fileName.split(".").pop();
+  
+  if(!allowedExtensions.includes(fileExtension)){
+    alert("please upload only jpg, jpeg and png files");
+    this.value = null;
+  }else if(fileSize > sizeLimit){
+    alert("file size too large")
+    this.value = null;
+  }
+}
+
+</script>
+</head>
+<body>
+<form name='form1' onsubmit='return formValidation()' >
+		<fieldset style="width:400px">
+			<legend>Profile Picture</legend>
+			User Id <input type="text" name="userid" value=""><br><br>
+			Picture <input type="file" name="file" multiple accept=".jpg, .png" required><br><br>
+			
+			
+			_____________________________________<br><br>
+			<input type="submit" name="" value="Submit">
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>email</title>
+	<script type='text/javascript'>
+function formValidation()
+{
+
+var uemail = document.form1.email;
+
+
+
+                      if(ValidateEmail(uemail))
+                         {
+                          
+window.location="email.html";
+
+return false;
+}
+
+
+
+
+
+function ValidateEmail(uemail)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+uemail.focus();
+return false;
+}
+}
+
+
+
+}
+</script>
+</head>
+<body>
+<form name='form1' onsubmit='return formValidation()' >
+		Email<br>
+		<input type="email" name="" value=""> 
+		
+		
+		<br><br>
+		<input type="submit" name="" value="Submit">
+	</form>
+</body>
+</html>
