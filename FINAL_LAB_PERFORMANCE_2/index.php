@@ -2,6 +2,15 @@
     <head>
         <title>Ajax Calculator</title>
         <style>
+            *, *::before, *::after {
+      box-sizing: border-box;
+      font-family: Gotham Rounded, sans-serif;
+      font-weight: normal;
+    }
+        body {
+  margin: 0;
+  padding: 0;
+  }
             .calculator-grid {
                 display: grid;
                 justify-content: center;
@@ -96,5 +105,48 @@
             });
         </script>
     </head>
+    <body>
+
+<table>
+    <tr>
+        <td colspan="5"><textarea id="display" class="display"></textarea></td>
+    </tr>
+    <tr>
+        <td><input id="" value="CE" type="button" class="but"></td>
+        <td><input id="cls" value="C" type="button" class="cls"></td>
+        <td><input id="del" value="DEL" type="button" class="but"></td>
+        <td><input id="div" value="/" type="button" class="but"></td>
+    </tr>
+    <tr>
+        <td><input value="7" type="button" class="but"></td>
+        <td><input value="8" type="button" class="but"></td>
+        <td><input value="9" type="button" class="but"></td>
+        
+        <td><input id="mul" value="*" type="button" class="but"></td>
+        
+    </tr>
+    <tr>
+        <td><input value="4" type="button" class="but"></td>
+        <td><input value="5" type="button" class="but"></td>
+        <td><input value="6" type="button" class="but"></td>
+        <td><input id="plus" value="+" type="button" class="but"></td>
+        
+        
+    </tr>
+    <tr>
+        <td><input value="1" type="button" class="but"></td>
+        <td><input value="2" type="button" class="but"></td>
+        <td><input value="3" type="button" class="but"></td>
+        <td><input id="sub" value="-" type="button" class="but"></td>
+        
+    </tr>
+    <tr>
+        <td><input id="neg" value="+/-" type="button" class="but"></td>
+        <td><input value="0" type="button" class="but"></td>
+        <td><input id="dot" value="." type="button" class="but"></td>
+        <td colspan="5"><input id="eql" value="=" type="button" class="eql"></td>
+    </tr>
     
+</table>
+    </body>
 </html>
